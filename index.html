@@ -10,8 +10,8 @@
 <style>
 /* ====== CAMBIA AQUÍ TUS IMÁGENES ====== */
 :root{
-  --img-hero:url("img/hero-camel-burdeos.jpg");
-  --img-process:url("img/camel-broche-rana.jpg");
+  --img-hero:url("./hero-camel-burdeos.jpg");
+  --img-process:url("./camel-broche-rana.jpg");
   --cream:#F6F1EA; --ink:#141414; --muted:#6B645C; --line:#E2DAD0; --white:#fff; --gold:#9C7A4A;
   --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,Helvetica,Arial,sans-serif;
 }
@@ -228,10 +228,10 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
     <div class="eyebrow">The Collection</div>
     <h2 style="margin-top:12px">Cuatro <em>must-haves</em> para todo lo que llevas contigo</h2>
     <div class="gallery" style="text-align:left">
-      <figure><img src="img/negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><b>Funda de portátil</b><span>From office to coffee</span></figcaption></figure>
-      <figure><img src="img/burdeos-detalle.jpg" alt="Funda de tablet burdeos trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>A juego con todo el set</span></figcaption></figure>
-      <figure><img src="img/hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><b>Funda de móvil</b><span>Tu <em>everyday essential</em></span></figcaption></figure>
-      <figure><img src="img/bandolera-movimiento.jpg" alt="Bandolera porta-móvil Atelier burdeos con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bandolera porta-móvil</b><span>Hands-free, estilo intacto</span></figcaption></figure>
+      <figure><img src="./negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><b>Funda de portátil</b><span>From office to coffee</span></figcaption></figure>
+      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet burdeos trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>A juego con todo el set</span></figcaption></figure>
+      <figure><img src="./hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><b>Funda de móvil</b><span>Tu <em>everyday essential</em></span></figcaption></figure>
+      <figure><img src="./bandolera-movimiento.jpg" alt="Bandolera porta-móvil Atelier burdeos con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bandolera porta-móvil</b><span>Hands-free, estilo intacto</span></figcaption></figure>
     </div>
     <div class="swatches"><span><i style="background:#5a1f22"></i>Burdeos</span><span><i style="background:#a06a3e"></i>Camel</span><span><i style="background:#232b45"></i>Azul noche</span><span><i style="background:#141414"></i>Negro</span></div>
   </div>
@@ -359,7 +359,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
   P.forEach(function(p,k){
     var t=document.createElement("button");t.className="pp-tab";t.type="button";t.setAttribute("role","tab");t.id="tab-"+p.id;
     t.setAttribute("aria-controls","panel-"+p.id);t.setAttribute("aria-selected",k===0);t.innerHTML='<i style="background:'+p.hex+'"></i>'+p.name;tabs.appendChild(t);
-    var src=p.imgs.map(function(n){return "img/fundas/"+p.id+"-"+n+".jpg"});
+    var src=p.imgs.map(function(n){return "./"+p.id+"-"+n+".jpg"});
     var d=document.createElement("div");d.className="pp-panel";d.id="panel-"+p.id;d.setAttribute("role","tabpanel");d.setAttribute("aria-labelledby",t.id);if(k)d.hidden=true;
     d.innerHTML='<div class="pp-media"><div class="car"><div class="car-track" tabindex="0" aria-label="Fotos funda '+p.name+'">'+src.map(function(s,i){return '<img src="'+s+'" alt="Funda de móvil Atelier '+p.name+', foto '+(i+1)+'" loading="lazy">'}).join("")+'</div>'+
       '<button class="car-btn prev" type="button" aria-label="Foto anterior">‹</button><button class="car-btn next" type="button" aria-label="Foto siguiente">›</button><span class="car-count">1 / '+src.length+'</span></div>'+
