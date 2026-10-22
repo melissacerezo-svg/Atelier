@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atelier · Fundas hechas a mano | La Casa de las Carcasas</title>
+<meta name="description" content="Atelier: la colección de fundas hechas a mano de La Casa de las Carcasas. Unidades limitadas. Apúntate y consigue acceso anticipado.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ====== CAMBIA AQUÍ TUS IMÁGENES ====== */
+:root{
+  --img-hero:url("img/hero-camel-burdeos.jpg");
+  --img-process:url("img/camel-broche-rana.jpg");
+  --cream:#F6F1EA; --ink:#141414; --muted:#6B645C; --line:#E2DAD0; --white:#fff; --gold:#9C7A4A;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font:16px/1.6 var(--sans)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h3{font-size:1.6rem}
+.eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.lead{color:var(--muted);font-size:1.1rem;max-width:46ch}
+section{padding:clamp(64px,9vw,112px) 0}
+
+/* CTA: único elemento negro relleno de la página */
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;
+  padding:16px 30px;border-radius:999px;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.cta:hover{background:#000;transform:translateY(-2px)}
+.cta:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{height:30px;width:auto}
+.logo span{font-family:var(--serif);font-size:1.3rem;font-style:italic;border-left:1px solid var(--line);padding-left:14px}
+.nav .cta{padding:10px 20px;font-size:.88rem}
+
+/* Hero */
+.hero{padding:0;background:var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);max-height:860px}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;gap:24px;padding:48px clamp(20px,5vw,72px)}
+.hero-img{background:var(--img-hero) center 30%/cover no-repeat #d9cfc2}
+.scarcity{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted)}
+.scarcity i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(156,122,74,.18)}
+
+/* Beneficios */
+.center{text-align:center}.center .lead{margin:16px auto 0}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.benefit{border-top:1px solid var(--ink);padding-top:24px}
+.benefit .n{font-family:var(--serif);font-size:1rem;color:var(--gold);font-style:italic}
+.benefit h3{margin:8px 0 10px}
+.benefit p{color:var(--muted);margin:0}
+
+/* Proceso */
+.process{background:var(--cream)}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.process-img{aspect-ratio:4/5;background:var(--img-process) 42% center/cover no-repeat #d9cfc2}
+
+/* Colección */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
+.gallery figcaption{margin-top:10px;font-size:.9rem}
+.gallery figcaption b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:500}
+.gallery figcaption span{color:var(--muted)}
+.swatches{display:flex;justify-content:center;gap:22px;margin-top:40px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.swatches i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.15)}
+.steps{list-style:none;padding:0;margin:32px 0 0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.4rem;color:var(--gold);grid-row:span 2}
+.steps b{font-weight:600}.steps span{color:var(--muted);font-size:.95rem}
+
+/* Confianza */
+.trust{padding:56px 0;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.trust-grid div{padding:8px}
+.trust-grid svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.4;margin:0 auto 10px}
+.trust-grid b{display:block;font-size:.95rem}.trust-grid small{color:var(--muted)}
+.brand-line{text-align:center;margin-top:36px;font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--muted)}
+
+/* Formulario */
+.form-sec{background:var(--ink);color:#fff}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.form-sec .lead{color:#C9C2B8}
+.perks{list-style:none;padding:0;margin:28px 0 0}
+.perks li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid #2c2c2c}
+.perks li::before{content:"✦";position:absolute;left:0;color:var(--gold)}
+form{background:#fff;color:var(--ink);border-radius:20px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:16px}
+label{font-size:.85rem;font-weight:600;display:block;margin-bottom:6px}
+input[type=text],input[type=email],select{width:100%;font:inherit;padding:14px 16px;border:1px solid #CFC6BA;border-radius:10px;background:#fff;color:var(--ink)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted)}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--ink)}
+form .cta{justify-content:center;width:100%}
+.legal{font-size:.72rem;color:var(--muted);line-height:1.45}
+.ok{display:none;text-align:center;padding:24px 8px}
+.ok h3{margin-bottom:8px}
+form.sent .fields{display:none}form.sent .ok{display:block}
+
+/* FAQ */
+.faq{max-width:760px;margin:40px auto 0}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.05rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--gold);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:12px 0 0}
+
+/* Cierre */
+.final{background:var(--cream);text-align:center}
+.final h2{max-width:18ch;margin:0 auto 28px}
+
+footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot a{text-decoration:none;margin-right:18px}
+
+@media (max-width:860px){
+  .hero-grid,.process-grid,.form-grid{grid-template-columns:1fr}
+  .hero-grid{min-height:0;max-height:none}
+  .hero-img{aspect-ratio:4/5;order:2}
+  .hero-copy{padding:40px 20px}
+  .benefits{grid-template-columns:1fr;gap:8px;margin-top:36px}
+  .gallery{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .gallery figure{scroll-snap-align:start}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .logo span{display:none}
+  .nav .cta{padding:9px 16px;font-size:.8rem}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="https://lacasadelascarcasas.es/" aria-label="La Casa de las Carcasas">
+      <img src="https://ebanokm.stripocdn.email/content/guids/CABINET_19d3945992de27d80e6754d7366348635c701f4c91b2062a68adab858cd7cade/images/logo_positivo.png" alt="La Casa de las Carcasas" width="139" height="30">
+      <span>Atelier</span>
+    </a>
+    <a class="cta" href="#reserva">Quiero acceso anticipado</a>
+  </div>
+</header>
+
+<main>
+<!-- 1 · HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Nueva colección · Edición limitada</div>
+      <h1>Atelier. Trenzado a mano, pieza a pieza.</h1>
+      <p class="lead">Fundas de móvil, portátil y tablet y bandolera porta-móvil en piel trenzada, en burdeos, camel y negro. Unidades contadas: apúntate y elige la tuya antes de que salga a la venta.</p>
+      <div><a class="cta" href="#reserva">Quiero acceso anticipado →</a></div>
+      <div class="scarcity"><i></i>Unidades limitadas · la lista tiene prioridad de compra</div>
+    </div>
+    <div class="hero-img" role="img" aria-label="Modelo abrazando la funda de portátil camel, la de tablet burdeos y la de móvil camel de Atelier"></div>
+  </div>
+</section>
+
+<!-- 2 · BENEFICIOS -->
+<section>
+  <div class="wrap center">
+    <div class="eyebrow">Por qué Atelier</div>
+    <h2 style="margin-top:12px">Lo que no encontrarás en ninguna otra funda</h2>
+    <div class="benefits" style="text-align:left">
+      <div class="benefit"><div class="n">i.</div><h3>Trenzado a mano</h3><p>Cada tira se entrelaza a mano. Sin producción en serie, sin dos piezas exactamente iguales.</p></div>
+      <div class="benefit"><div class="n">ii.</div><h3>Edición limitada</h3><p>Se fabrican pocas unidades por color. Cuando se agotan, no vuelven.</p></div>
+      <div class="benefit"><div class="n">iii.</div><h3>Un set que combina</h3><p>Móvil, portátil y tablet en el mismo trenzado, con broches joya para hacerlas tuyas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PROCESO -->
+<section class="process">
+  <div class="wrap process-grid">
+    <div class="process-img" role="img" aria-label="Modelo con la funda de portátil y la de móvil Atelier en camel, con broche de rana"></div>
+    <div>
+      <div class="eyebrow">Del taller a tu mano</div>
+      <h2 style="margin-top:12px">Así nace una pieza Atelier</h2>
+      <ol class="steps">
+        <li><b>Diseño</b><span>Cada modelo se dibuja pensando en cómo lo vas a llevar.</span></li>
+        <li><b>Corte de las tiras</b><span>La piel se corta en tiras del mismo ancho para un trenzado regular.</span></li>
+        <li><b>Trenzado a mano</b><span>Tira a tira, hasta cubrir toda la pieza.</span></li>
+        <li><b>Revisión pieza a pieza</b><span>Ninguna sale sin pasar un control final.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 3b · COLECCIÓN -->
+<section>
+  <div class="wrap center">
+    <div class="eyebrow">La colección</div>
+    <h2 style="margin-top:12px">Cuatro piezas, tres colores</h2>
+    <div class="gallery" style="text-align:left">
+      <figure><img src="img/negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><b>Funda de portátil</b><span>Con cremallera y asa</span></figcaption></figure>
+      <figure><img src="img/burdeos-detalle.jpg" alt="Funda de tablet burdeos trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>Mismo trenzado que el set</span></figcaption></figure>
+      <figure><img src="img/hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><b>Funda de móvil</b><span>Para tu modelo</span></figcaption></figure>
+      <figure><img src="img/bandolera-movimiento.jpg" alt="Bandolera porta-móvil Atelier burdeos con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bandolera porta-móvil</b><span>Manos libres, con broche</span></figcaption></figure>
+    </div>
+    <div class="swatches"><span><i style="background:#5a1f22"></i>Burdeos</span><span><i style="background:#a06a3e"></i>Camel</span><span><i style="background:#141414"></i>Negro</span></div>
+  </div>
+</section>
+
+<!-- 4 · CONFIANZA -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><b>Envío gratis</b><small>a partir de 30 €</small></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>Recíbelo en 24/48 h</b><small>envío rápido</small></div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg><b>Devoluciones gratuitas</b><small>en todos tus pedidos</small></div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5zM8 10V7a4 4 0 0 1 8 0v3"/></svg><b>Recógelo en tienda</b><small><a href="https://lacasadelascarcasas.es/tiendas">encuentra la más cercana</a></small></div>
+    </div>
+    <p class="brand-line">Firmado por La Casa de las Carcasas, con tiendas en España y Latinoamérica.</p>
+  </div>
+</section>
+
+<!-- 5 · FORMULARIO -->
+<section class="form-sec" id="reserva">
+  <div class="wrap form-grid">
+    <div>
+      <div class="eyebrow">Lista de acceso anticipado</div>
+      <h2 style="margin-top:12px">Elige tu pieza antes que nadie</h2>
+      <p class="lead" style="margin-top:16px">Apuntarte es gratis y no te obliga a comprar. Te avisamos por email antes de abrir la venta al público.</p>
+      <ul class="perks">
+        <li>Acceso a la colección antes del lanzamiento</li>
+        <li>Reserva de tu modelo de móvil mientras quede stock</li>
+        <li>Primeras fotos y detalles de cada pieza</li>
+      </ul>
+    </div>
+
+    <!-- Pega aquí tu endpoint (Formspree, Brevo, Netlify Forms…). Ej.: https://formspree.io/f/xxxxxx -->
+    <!-- GitHub Pages: pega tu enlace de Formspree en action (https://formspree.io/f/XXXX) -->
+    <form id="form" name="atelier" action="" method="POST" novalidate>
+      <input type="hidden" name="form-name" value="atelier"><p hidden><label>No rellenar <input name="bot-field"></label></p>
+      <div class="fields" style="display:flex;flex-direction:column;gap:16px">
+        <div><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" autocomplete="given-name" required placeholder="Tu nombre"></div>
+        <div><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required placeholder="tu@email.com"></div>
+        <div><label for="modelo">Modelo de móvil</label>
+          <select id="modelo" name="modelo" required>
+            <option value="">Selecciona tu modelo</option>
+            <option>iPhone 17 Pro Max</option><option>iPhone 17 Pro</option><option>iPhone 17 / Air</option>
+            <option>iPhone 16 / 16 Pro / 16 Pro Max</option><option>iPhone 15 o anterior</option>
+            <option>Samsung Galaxy S</option><option>Samsung Galaxy A</option><option>Otro modelo</option>
+          </select></div>
+        <label class="check"><input type="checkbox" name="privacidad" required> <span>He leído y acepto la <a href="https://registro.lacasadelascarcasas.es/privacidad/" target="_blank" rel="noopener">política de privacidad</a> y quiero recibir el aviso de Atelier.</span></label>
+        <button class="cta" type="submit">Quiero acceso anticipado</button>
+        <p class="legal">Responsable: CARCAMOVIL, S.L. («La Casa de las Carcasas»). Finalidad: avisarte del lanzamiento de Atelier. Puedes ejercer tus derechos en lopd@lacasadelascarcasas.es.</p>
+      </div>
+      <div class="ok" role="status" aria-live="polite">
+        <div class="eyebrow">Estás dentro</div>
+        <h3 style="margin-top:8px">Gracias, te avisaremos antes que a nadie.</h3>
+        <p class="legal" style="font-size:.9rem">Revisa tu bandeja de entrada (y la de promociones) el día del lanzamiento.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 6 · FAQ -->
+<section>
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">Antes de apuntarte</div><h2 style="margin-top:12px">Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <details open><summary>¿Apuntarme me obliga a comprar?</summary><p>No. Solo recibes el aviso y el acceso anticipado. Decides tú si compras.</p></details>
+      <details><summary>¿Habrá Atelier para mi modelo de móvil?</summary><p>Por eso te preguntamos tu modelo: nos ayuda a reservar stock. Te confirmamos disponibilidad en el email de acceso.</p></details>
+      <details><summary>¿Por qué hay tan pocas unidades?</summary><p>Porque cada pieza se hace a mano. No es una estrategia: es lo que da de sí el taller.</p></details>
+      <details><summary>¿Y si no me convence cuando la reciba?</summary><p>Las devoluciones son gratuitas, como en cualquier compra de La Casa de las Carcasas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow">Atelier · edición limitada</div>
+    <h2 style="margin-top:12px">Cuando se acaben, no vuelven. Asegura la tuya.</h2>
+    <a class="cta" href="#reserva">Quiero acceso anticipado →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© CARCAMOVIL, S.L. · La Casa de las Carcasas</span>
+    <span><a href="https://registro.lacasadelascarcasas.es/privacidad/">Privacidad</a><a href="https://lacasadelascarcasas.es/">Aviso legal</a><a href="https://www.instagram.com/lacasadelascarcasas/">Instagram</a><a href="https://www.tiktok.com/@lacasadelascarcasas">TikTok</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById("form");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var btn=f.querySelector("button");btn.disabled=true;btn.textContent="Enviando…";
+    var done=function(){f.classList.add("sent");if(window.gtag)gtag("event","generate_lead",{form:"atelier"});};
+    var url=f.getAttribute("action");
+    if(!url){done();return;}
+    fetch(url,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
+      .then(function(r){if(r.ok)done();else throw 0;})
+      .catch(function(){btn.disabled=false;btn.textContent="Quiero acceso anticipado";alert("No se ha podido enviar. Inténtalo de nuevo.");});
+  });
+})();
+</script>
+</body>
+</html>
