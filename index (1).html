@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atelier · Colección trenzada a mano | La Casa de las Carcasas</title>
+<meta name="description" content="Atelier, la colección cápsula trenzada a mano de La Casa de las Carcasas. Edición limitada. Entra en la lista privada y elige la tuya antes que nadie.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ====== CAMBIA AQUÍ TUS IMÁGENES ====== */
+:root{
+  --img-hero:url("./hero-camel-burdeos.jpg");
+  --img-process:url("./camel-broche-rana.jpg");
+  --cream:#F6F1EA; --ink:#141414; --muted:#6B645C; --line:#E2DAD0; --white:#fff; --gold:#9C7A4A;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:Inter,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font:16px/1.6 var(--sans)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1 em,h2 em,.h1 em{font-style:italic}
+.h1{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4vw,3rem)}
+h3{font-size:1.6rem}
+.eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.lead{color:var(--muted);font-size:1.1rem;max-width:46ch}
+section{padding:clamp(44px,9vw,112px) 0}
+
+/* CTA: único elemento negro relleno de la página */
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;
+  padding:16px 30px;border-radius:999px;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.cta:hover{background:#000;transform:translateY(-2px)}
+.cta:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{height:30px;width:auto}
+.logo span{display:none;font-family:var(--serif);font-size:1.3rem;font-style:italic;border-left:1px solid var(--line);padding-left:14px}
+.nav .cta{padding:9px 16px;font-size:.8rem}
+
+/* Hero */
+.hero{padding:0;background:var(--cream)}
+.hero-banner{margin:0;line-height:0;background:#0d0b09}
+.hero-banner img{width:100%;height:auto;display:block}
+.hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:32px 20px 44px;max-width:760px;margin:0 auto}
+.hero-copy .lead{margin:0 auto}
+.scarcity{display:block;font-size:.9rem;color:var(--muted);max-width:34ch}
+.scarcity i{display:inline-block;vertical-align:1px;margin-right:8px}
+.scarcity i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(156,122,74,.18)}
+
+/* Beneficios */
+.center{text-align:center}.center .lead{margin:16px auto 0}
+.benefits{display:grid;grid-template-columns:1fr;gap:8px;margin-top:36px}
+.benefit{border-top:1px solid var(--ink);padding-top:24px}
+.benefit .n{font-family:var(--serif);font-size:1rem;color:var(--gold);font-style:italic}
+.benefit h3{margin:8px 0 10px}
+.benefit p{color:var(--muted);margin:0}
+
+/* Proceso */
+.process{background:var(--cream)}
+.process-grid{display:grid;grid-template-columns:1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.process-img{aspect-ratio:4/5;background:var(--img-process) 42% center/cover no-repeat #d9cfc2}
+
+/* Colección */
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;gap:14px;margin-top:36px}
+.gallery figure{scroll-snap-align:start}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
+.intro{max-width:56ch;color:var(--muted);font-size:1rem;line-height:1.65}
+.intro p{margin:0 0 12px}
+.intro strong{color:var(--ink);letter-spacing:.08em;font-weight:600}
+.intro-hook{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--ink)}
+.intro-sign{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:0!important}
+.gallery figcaption{margin-top:10px;font-size:.95rem;color:var(--muted)}
+.gallery figcaption b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:500}
+.gallery figcaption span{color:var(--muted)}
+.swatches{display:flex;justify-content:center;gap:22px;margin-top:40px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.swatches i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.15)}
+.steps{list-style:none;padding:0;margin:32px 0 0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:1.4rem;color:var(--gold);grid-row:span 2}
+.steps b{font-weight:600}.steps span{color:var(--muted);font-size:.95rem}
+
+/* Confianza */
+.trust{padding:56px 0;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center}
+.trust-grid div{padding:8px}
+.trust-grid svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.4;margin:0 auto 10px}
+.trust-grid b{display:block;font-size:.95rem}.trust-grid small{color:var(--muted)}
+.brand-line{text-align:center;margin-top:36px;font-family:var(--serif);font-size:1.4rem;font-style:italic;color:var(--muted)}
+
+/* Formulario */
+.form-sec{background:var(--ink);color:#fff}
+.form-grid{display:grid;grid-template-columns:1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.form-sec .lead{color:#C9C2B8}
+.perks{list-style:none;padding:0;margin:28px 0 0}
+.perks li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid #2c2c2c}
+.perks li::before{content:"✦";position:absolute;left:0;color:var(--gold)}
+form{background:#fff;color:var(--ink);border-radius:20px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:16px}
+label{font-size:.85rem;font-weight:600;display:block;margin-bottom:6px}
+input[type=text],input[type=email],select{width:100%;font:inherit;padding:14px 16px;border:1px solid #CFC6BA;border-radius:10px;background:#fff;color:var(--ink)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted)}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--ink)}
+form .cta{justify-content:center;width:100%}
+.legal{font-size:.72rem;color:var(--muted);line-height:1.45}
+.ok{display:none;text-align:center;padding:24px 8px}
+.ok h3{margin-bottom:8px}
+form.sent .fields{display:none!important}form.sent .ok{display:block}
+
+/* FAQ */
+.faq{max-width:760px;margin:40px auto 0}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:1.05rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--gold);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:12px 0 0}
+
+/* Cierre */
+.final{background:var(--cream);text-align:center}
+.band{margin:0;line-height:0;background:#5a1f22}
+.band img{width:100%;height:auto;display:block}
+.final h2{max-width:18ch;margin:0 auto 28px}
+
+footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot a{text-decoration:none;margin-right:18px}
+
+
+/* Fundas de móvil: presentación por color */
+.pp{background:var(--cream)}
+.pp-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:32px}
+.pp-tab{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:inherit;font-size:.92rem;cursor:pointer;color:var(--ink)}
+.pp-tab i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
+.pp-tab[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pp-media{min-width:0}
+.pp-panel{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,64px);align-items:center;margin-top:40px}
+.pp-panel[hidden]{display:none}
+.car{position:relative}
+.car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border-radius:6px;background:#fff;scrollbar-width:none}
+.car-track::-webkit-scrollbar{display:none}
+.car-track img{flex:0 0 100%;width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:start}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.car-btn.prev{left:12px}.car-btn.next{right:12px}
+.car-btn:disabled{opacity:.35;cursor:default}
+.car-thumbs{display:flex;gap:8px;margin-top:12px;overflow-x:auto}
+.car-thumbs button{flex:0 0 64px;height:64px;padding:0;border:2px solid transparent;border-radius:4px;background:none;cursor:pointer;opacity:.6}
+.car-thumbs button[aria-current="true"]{border-color:var(--ink);opacity:1}
+.car-thumbs img{width:100%;height:100%;object-fit:cover;border-radius:2px}
+.car-count{position:absolute;left:12px;bottom:12px;background:rgba(20,20,20,.72);color:#fff;font-size:.75rem;padding:3px 10px;border-radius:999px}
+.pp-info h3{font-size:clamp(2rem,4vw,2.8rem);margin:8px 0 12px}
+.pp-info p{color:var(--muted);margin:0 0 20px}
+.pp-info .price{font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin:-4px 0 12px}
+.specs{list-style:none;padding:0;margin:0 0 28px}
+.specs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.specs li span{color:var(--muted)}
+
+
+/* Cookies */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:520px;margin-left:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.18);font-size:.88rem}
+.cookies[hidden]{display:none}
+.cookies p{margin:0 0 12px;color:var(--muted)}
+.cookies .row{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{font:inherit;font-weight:600;border-radius:999px;padding:10px 18px;cursor:pointer;border:1px solid var(--ink);background:#fff;color:var(--ink)}
+.cookies button.accept{background:var(--ink);color:#fff}
+
+/* ====== Tablet y escritorio (mobile-first: lo de arriba es móvil) ====== */
+@media (min-width:600px){
+  .trust-grid{grid-template-columns:repeat(4,1fr)}
+  .benefits{grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+}
+@media (min-width:861px){
+  .logo span{display:inline}
+  .hero-banner img{height:min(58vh,500px);object-fit:cover;object-position:center 30%}
+  .nav .cta{padding:10px 20px;font-size:.88rem}
+  .hero-copy{padding:56px 20px 72px;gap:24px}
+  .process-grid,.form-grid{grid-template-columns:1fr 1fr}
+  .pp-panel{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .car-btn{width:44px;height:44px}
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible;margin-top:48px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23F6F1EA' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#141414">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atelier · The Woven Collection | La Casa de las Carcasas">
+<meta property="og:description" content="El arte de elevar lo cotidiano. Colección hecha a mano en granate, camel y negro. Únete a la waitlist.">
+<meta property="og:image" content="https://melissacerezo-svg.github.io/Atelier/og-atelier.jpg">
+<meta property="og:url" content="https://melissacerezo-svg.github.io/Atelier/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ====== MEDICIÓN: pega aquí tus IDs ======
+     GA4:     ID de medición, empieza por G-  (Analytics > Administrar > Flujos de datos)
+     CLARITY: ID del proyecto (clarity.microsoft.com > Settings > Overview)
+     Hasta que el visitante acepte las cookies, no se recoge nada. -->
+<script>
+window.ATELIER_IDS={GA4:"G-L3W27VE5DJ",CLARITY:""};
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied"});
+if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+ATELIER_IDS.GA4;document.head.appendChild(g);gtag("js",new Date());gtag("config",ATELIER_IDS.GA4);}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="https://lacasadelascarcasas.es/" aria-label="La Casa de las Carcasas">
+      <img src="https://ebanokm.stripocdn.email/content/guids/CABINET_19d3945992de27d80e6754d7366348635c701f4c91b2062a68adab858cd7cade/images/logo_positivo.png" alt="La Casa de las Carcasas" width="139" height="30">
+      <span>Atelier</span>
+    </a>
+    <a class="cta" href="#reserva">Unirme a la waitlist</a>
+  </div>
+</header>
+
+<main>
+<!-- 1 · HERO -->
+<section class="hero">
+  <h1 class="hero-banner">
+    <picture>
+      <source media="(max-width:599px)" srcset="./atelier-hero-movil.jpg" width="1080" height="1350">
+      <img src="./atelier-hero.jpg" width="2000" height="837" alt="Atelier · The Woven Collection. Dos modelos con las fundas trenzadas Atelier" fetchpriority="high">
+    </picture>
+  </h1>
+  <div class="hero-copy">
+      <p class="h1">El arte de elevar lo cotidiano.</p>
+      <div class="intro">
+        <p class="intro-hook">Hay detalles que lo cambian todo.</p>
+        <p><strong>ATELIER</strong> nace de la idea de transformar lo cotidiano en algo extraordinario. Una colección hecha a mano, donde la moda, la funcionalidad y el diseño se unen para dar vida a piezas únicas, cuidadas hasta el último detalle.</p>
+        <p>Porque tu móvil, tu iPad o tu portátil también forman parte de tu estilo. Y porque incluso el look más sencillo puede convertirse en algo especial con el accesorio adecuado.</p>
+        <p class="intro-sign">Diseñada para acompañarte cada día. Creada para marcar la diferencia.</p>
+      </div>
+      <div><a class="cta" href="#reserva">Unirme a la waitlist →</a></div>
+      <div class="scarcity"><i></i><span><em>Limited drop</em> · quien está en la waitlist elige primero</span></div>
+  </div>
+</section>
+
+<!-- 3b · COLECCIÓN -->
+<section>
+  <div class="wrap center">
+    <div class="eyebrow">The Collection</div>
+    <h2 style="margin-top:12px">Cuatro <em>must-haves</em> para todo lo que llevas contigo</h2>
+    <div class="gallery" style="text-align:left">
+      <figure><img src="./negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><span>From office to coffee</span></figcaption></figure>
+      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet granate trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><span>A juego con todo el set</span></figcaption></figure>
+      <figure><img src="./hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><span>Tu <em>everyday essential</em></span></figcaption></figure>
+      <figure><img src="./bandolera-movimiento.jpg" alt="Bolso porta-móvil Atelier granate con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><span>Hands-free, estilo intacto</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3c · FUNDAS DE MÓVIL (carrusel por color) -->
+<section class="pp" id="fundas">
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">The Iconic Case</div><h2 style="margin-top:12px">Encuentra tu <em>shade</em></h2></div>
+    <div class="pp-tabs" role="tablist" aria-label="Colores de la funda"></div>
+    <div id="pp-panels"></div>
+  </div>
+</section>
+
+<!-- 4 · CONFIANZA -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg><b>Envío gratis</b><small>a partir de 30 €</small></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>Recíbelo en 24/48 h</b><small>envío rápido</small></div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg><b>Devoluciones gratuitas</b><small>en todos tus pedidos</small></div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 10h16l-1 10H5zM8 10V7a4 4 0 0 1 8 0v3"/></svg><b>Recógelo en tienda</b><small><a href="https://lacasadelascarcasas.es/tiendas">encuentra la más cercana</a></small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · FORMULARIO -->
+<section class="form-sec" id="reserva">
+  <div class="wrap form-grid">
+    <div>
+      <div class="eyebrow">Private Waitlist</div>
+      <h2 style="margin-top:12px"><em>Be the first</em>. Sé de las primeras en tenerla</h2>
+      <p class="lead" style="margin-top:16px">Únete a la <em>waitlist</em> de Atelier, sin compromiso de compra. Te escribiremos antes de abrir la colección al público.</p>
+      <ul class="perks">
+        <li><em>Early access</em> a la colección, antes que nadie</li>
+        <li>Tu modelo reservado mientras quede stock</li>
+        <li>Un <em>sneak peek</em> de cada pieza</li>
+      </ul>
+    </div>
+
+    <!-- Pega aquí tu endpoint (Formspree, Brevo, Netlify Forms…). Ej.: https://formspree.io/f/xxxxxx -->
+    <!-- GitHub Pages: pega tu enlace de Formspree en action (https://formspree.io/f/XXXX) -->
+    <form id="form" name="atelier" action="https://formspree.io/f/maeqrzkp" method="POST" novalidate>
+      <p hidden><label>No rellenar <input name="bot-field"></label></p>
+      <div class="fields" style="display:flex;flex-direction:column;gap:16px">
+        <input type="hidden" name="color" id="color" value="">
+        <div><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" autocomplete="given-name" required placeholder="Tu nombre"></div>
+        <div><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required placeholder="tu@email.com"></div>
+        <div><label for="modelo">Modelo de móvil</label>
+          <select id="modelo" name="modelo" required>
+            <option value="">Selecciona tu modelo</option>
+            <option>iPhone 17 Pro Max</option><option>iPhone 17 Pro</option><option>iPhone 17 / Air</option>
+            <option>iPhone 16 / 16 Pro / 16 Pro Max</option><option>iPhone 15 o anterior</option>
+            <option>Samsung Galaxy S</option><option>Samsung Galaxy A</option><option>Otro modelo</option>
+          </select></div>
+        <label class="check"><input type="checkbox" name="privacidad" required> <span>He leído y acepto la <a href="https://registro.lacasadelascarcasas.es/privacidad/" target="_blank" rel="noopener">política de privacidad</a> y quiero recibir el aviso de Atelier.</span></label>
+        <button class="cta" type="submit">Unirme a la waitlist</button>
+        <p class="legal">Responsable: CARCAMOVIL, S.L. («La Casa de las Carcasas»). Finalidad: avisarte del lanzamiento de Atelier. Puedes ejercer tus derechos en lopd@lacasadelascarcasas.es.</p>
+      </div>
+      <div class="ok" role="status" aria-live="polite">
+        <div class="eyebrow">You're in</div>
+        <h3 style="margin-top:8px">Te escribiremos antes que a nadie.</h3>
+        <p class="legal" style="font-size:.9rem">Revisa tu bandeja de entrada (y la de promociones) el día del lanzamiento.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 6 · FAQ -->
+<section>
+  <div class="wrap">
+    <div class="center"><div class="eyebrow">FAQ</div><h2 style="margin-top:12px">Preguntas frecuentes</h2></div>
+    <div class="faq">
+      <details open><summary>¿Apuntarme me obliga a comprar?</summary><p>En absoluto. Solo te abrimos la puerta antes; tú decides si entras.</p></details>
+      <details><summary>¿Habrá Atelier para mi modelo de móvil?</summary><p>Cuéntanos qué móvil tienes y te confirmaremos la disponibilidad en tu email de acceso.</p></details>
+      <details><summary>¿Por qué hay tan pocas unidades?</summary><p>Porque cada pieza se trenza a mano. La exclusividad no es una estrategia: es el ritmo del oficio.</p></details>
+      <details><summary>¿Y si no me convence cuando la reciba?</summary><p>Las devoluciones son gratuitas, como en cualquier compra de La Casa de las Carcasas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 6b · BANDA DE MARCA -->
+<figure class="band"><img src="./atelier-banner.jpg" width="2000" height="743" alt="Atelier · The Woven Collection" loading="lazy"></figure>
+
+<!-- 7 · CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow">Atelier · Limited Edition</div>
+    <h2 style="margin-top:12px"><em>Once it's gone, it's gone.</em> Hay piezas que no se repiten. Esta es una de ellas.</h2>
+    <a class="cta" href="#reserva">Unirme a la waitlist →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© CARCAMOVIL, S.L. · La Casa de las Carcasas</span>
+    <span><a href="https://registro.lacasadelascarcasas.es/privacidad/">Privacidad</a><a href="https://lacasadelascarcasas.es/aviso-legal/">Aviso legal</a><a href="https://www.instagram.com/lacasadelascarcasas/">Instagram</a><a href="https://www.tiktok.com/@lacasadelascarcasas">TikTok</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById("form");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var btn=f.querySelector("button");btn.disabled=true;btn.textContent="Enviando…";
+    var done=function(){f.classList.add("sent");if(window.gtag)gtag("event","generate_lead",{form:"atelier",color:(document.getElementById("color")||{}).value||"sin elegir",modelo:document.getElementById("modelo").value});};
+    var url=f.getAttribute("action");
+    if(!url){done();return;}
+    fetch(url,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
+      .then(function(r){if(r.ok)done();else throw 0;})
+      .catch(function(){btn.disabled=false;btn.textContent="Unirme a la waitlist";alert("No se ha podido enviar. Inténtalo de nuevo.");});
+  });
+})();
+</script>
+<script>
+(function(){
+  var P=[
+    {id:"burdeos",name:"Granate",cta:"Quiero la granate",hex:"#5a1f22",desc:"Intenso y sofisticado, como un buen vino. El tono más magnético de la colección.",imgs:[2,3,4,1,5]},
+    {id:"camel",name:"Camel",cta:"Quiero la marrón",hex:"#a06a3e",desc:"Cálido, atemporal, imprescindible. El neutro que eleva cualquier <em>outfit</em>.",imgs:[2,3,4,1,5]},
+    {id:"negro",name:"Negro",cta:"Quiero la negra",hex:"#141414",desc:"Negro total. Minimalista, rotunda, eterna.",imgs:[2,1,3]}
+  ];
+  var tabs=document.querySelector(".pp-tabs"),wrap=document.getElementById("pp-panels");
+  P.forEach(function(p,k){
+    var t=document.createElement("button");t.className="pp-tab";t.type="button";t.setAttribute("role","tab");t.id="tab-"+p.id;
+    t.setAttribute("aria-controls","panel-"+p.id);t.setAttribute("aria-selected",k===0);t.innerHTML='<i style="background:'+p.hex+'"></i>'+p.name;tabs.appendChild(t);
+    var src=p.imgs.map(function(n){return "./"+p.id+"-"+n+".jpg"});
+    var d=document.createElement("div");d.className="pp-panel";d.id="panel-"+p.id;d.setAttribute("role","tabpanel");d.setAttribute("aria-labelledby",t.id);if(k)d.hidden=true;
+    d.innerHTML='<div class="pp-media"><div class="car"><div class="car-track" tabindex="0" aria-label="Fotos funda '+p.name+'">'+src.map(function(s,i){return '<img src="'+s+'" alt="Funda de móvil Atelier '+p.name+', foto '+(i+1)+'" loading="lazy">'}).join("")+'</div>'+
+      '<button class="car-btn prev" type="button" aria-label="Foto anterior">‹</button><button class="car-btn next" type="button" aria-label="Foto siguiente">›</button><span class="car-count">1 / '+src.length+'</span></div>'+
+      '<div class="car-thumbs">'+src.map(function(s,i){return '<button type="button" aria-label="Ver foto '+(i+1)+'"><img src="'+s+'" alt="" loading="lazy"></button>'}).join("")+'</div></div>';
+    var info=document.createElement("div");info.className="pp-info";
+    info.innerHTML='<div class="eyebrow">Phone case · Limited edition</div><h3>'+p.name+'</h3><p class="price">29,99 €</p><p>'+p.desc+'</p>'+
+      '<ul class="specs"><li>Trenzado<span>A mano</span></li><li>Cámara<span>Borde elevado 0,5 mm</span></li><li>Pantalla<span>Borde elevado 1,2 mm</span></li><li>Protección<span>Anticaídas</span></li></ul>'+
+      '<a class="cta" href="#reserva" data-color="'+p.name+'">'+p.cta+' →</a>';
+    d.appendChild(info);wrap.appendChild(d);
+    var track=d.querySelector(".car-track"),th=d.querySelectorAll(".car-thumbs button"),cnt=d.querySelector(".car-count"),pv=d.querySelector(".prev"),nx=d.querySelector(".next");
+    function idx(){return Math.round(track.scrollLeft/track.clientWidth)}
+    function go(i){track.scrollTo({left:i*track.clientWidth})}
+    function upd(){var i=idx();cnt.textContent=(i+1)+" / "+src.length;pv.disabled=i===0;nx.disabled=i===src.length-1;th.forEach(function(b,j){b.setAttribute("aria-current",j===i)})}
+    pv.onclick=function(){go(idx()-1)};nx.onclick=function(){go(idx()+1)};
+    th.forEach(function(b,j){b.onclick=function(){go(j)}});
+    track.addEventListener("scroll",function(){clearTimeout(track._t);track._t=setTimeout(upd,60)});
+    track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(idx()+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(idx()-1)}});
+    upd();
+  });
+  tabs.addEventListener("click",function(e){var b=e.target.closest(".pp-tab");if(!b)return;
+    tabs.querySelectorAll(".pp-tab").forEach(function(x){var on=x===b;x.setAttribute("aria-selected",on);document.getElementById(x.getAttribute("aria-controls")).hidden=!on});});
+  document.addEventListener("click",function(e){var a=e.target.closest("[data-color]");if(a)document.getElementById("color").value=a.dataset.color;});
+})();
+</script>
+<div class="cookies" id="cookies" hidden role="dialog" aria-label="Cookies">
+  <p>Usamos cookies de analítica (Google Analytics) para saber cómo se usa esta página y mejorarla. Solo se activan si las aceptas. <a href="https://registro.lacasadelascarcasas.es/privacidad/" target="_blank" rel="noopener">Más info</a></p>
+  <div class="row"><button class="accept" type="button" data-c="yes">Aceptar</button><button type="button" data-c="no">Rechazar</button></div>
+</div>
+<script>
+(function(){
+  /* --- Eventos de interacción --- */
+  document.addEventListener("click",function(e){
+    var a=e.target.closest(".cta");if(a&&a.tagName==="A"){var sct=a.closest("section,header");gtag("event","cta_click",{cta_text:a.textContent.trim(),cta_location:sct?(sct.id||sct.className||"header"):"page"});}
+    var t=e.target.closest(".pp-tab");if(t)gtag("event","select_color",{color:t.textContent.trim()});
+    var st=e.target.closest('a[href*="/tiendas"]');if(st)gtag("event","store_finder_click",{collection:"atelier"});
+  });
+
+  /* --- Cookies --- */
+  var ids=window.ATELIER_IDS||{},box=document.getElementById("cookies"),KEY="atelier-consent";
+  function grant(){
+    gtag("consent","update",{analytics_storage:"granted"});
+    if(ids.CLARITY&&!window.clarity){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",ids.CLARITY);}
+  }
+  if(!ids.GA4&&!ids.CLARITY)return;
+  var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}
+  if(saved==="yes")grant(); else if(saved!=="no")box.hidden=false;
+  box.addEventListener("click",function(e){var b=e.target.closest("[data-c]");if(!b)return;try{localStorage.setItem(KEY,b.dataset.c);}catch(err){}if(b.dataset.c==="yes")grant();box.hidden=true;});
+})();
+</script>
+</body>
+</html>
