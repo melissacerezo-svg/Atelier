@@ -28,7 +28,7 @@ h2{font-size:clamp(2rem,4vw,3rem)}
 h3{font-size:1.6rem}
 .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .lead{color:var(--muted);font-size:1.1rem;max-width:46ch}
-section{padding:clamp(64px,9vw,112px) 0}
+section{padding:clamp(44px,9vw,112px) 0}
 
 /* CTA: único elemento negro relleno de la página */
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:1rem;
@@ -218,12 +218,11 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
 <section class="hero">
   <h1 class="hero-banner">
     <picture>
-      <source media="(max-width:599px)" srcset="./atelier-hero-movil.jpg" width="1000" height="625">
+      <source media="(max-width:599px)" srcset="./atelier-hero-movil.jpg" width="1080" height="1350">
       <img src="./atelier-hero.jpg" width="2000" height="837" alt="Atelier · The Woven Collection. Dos modelos con las fundas trenzadas Atelier" fetchpriority="high">
     </picture>
   </h1>
   <div class="hero-copy">
-      <div class="eyebrow">Crafted by hand · Limited edition</div>
       <p class="h1">Tu nuevo <em>it-piece</em> se trenza a mano.</p>
       <p class="lead">Móvil, portátil, tablet y bolso, vestidos de trenzado en granate, camel y negro. <em>Limited edition</em>: pocas piezas, para pocas manos. Entra en la <em>waitlist</em> y elige la tuya antes que nadie.</p>
       <div><a class="cta" href="#reserva">Unirme a la waitlist →</a></div>
@@ -244,22 +243,6 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
   </div>
 </section>
 
-<!-- 3 · PROCESO -->
-<section class="process">
-  <div class="wrap process-grid">
-    <div class="process-img" role="img" aria-label="Modelo con la funda de portátil y la de móvil Atelier en camel, con broche de rana"></div>
-    <div>
-      <div class="eyebrow">The Craft</div>
-      <h2 style="margin-top:12px"><em>Slow luxury</em>: el lujo de lo que se hace despacio</h2>
-      <ol class="steps">
-        <li><b>El diseño</b><span>Nace como nace un accesorio: pensando en cómo lo vas a llevar.</span></li>
-        <li><b>El corte</b><span>Tiras del mismo ancho, para un trenzado impecable.</span></li>
-        <li><b>El trenzado</b><span>Tira a tira, a mano, con la paciencia de un oficio.</span></li>
-        <li><b>El último vistazo</b><span>Cada pieza se revisa una a una antes de llegar a ti.</span></li>
-      </ol>
-    </div>
-  </div>
-</section>
 
 <!-- 3b · COLECCIÓN -->
 <section>
@@ -392,9 +375,9 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
 <script>
 (function(){
   var P=[
-    {id:"burdeos",name:"Granate",hex:"#5a1f22",desc:"Intenso y sofisticado, como un buen vino. El tono más magnético de la colección.",imgs:[2,3,4,1,5]},
-    {id:"camel",name:"Camel",hex:"#a06a3e",desc:"Cálido, atemporal, imprescindible. El neutro que eleva cualquier <em>outfit</em>.",imgs:[2,3,4,1,5]},
-    {id:"negro",name:"Negro",hex:"#141414",desc:"Negro total. Minimalista, rotunda, eterna.",imgs:[2,1,3]}
+    {id:"burdeos",name:"Granate",cta:"Quiero la granate",hex:"#5a1f22",desc:"Intenso y sofisticado, como un buen vino. El tono más magnético de la colección.",imgs:[2,3,4,1,5]},
+    {id:"camel",name:"Camel",cta:"Quiero la marrón",hex:"#a06a3e",desc:"Cálido, atemporal, imprescindible. El neutro que eleva cualquier <em>outfit</em>.",imgs:[2,3,4,1,5]},
+    {id:"negro",name:"Negro",cta:"Quiero la negra",hex:"#141414",desc:"Negro total. Minimalista, rotunda, eterna.",imgs:[2,1,3]}
   ];
   var tabs=document.querySelector(".pp-tabs"),wrap=document.getElementById("pp-panels");
   P.forEach(function(p,k){
@@ -408,7 +391,7 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
     var info=document.createElement("div");info.className="pp-info";
     info.innerHTML='<div class="eyebrow">Phone case · Limited edition</div><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+
       '<ul class="specs"><li>Trenzado<span>A mano</span></li><li>Cámara<span>Borde elevado 0,5 mm</span></li><li>Pantalla<span>Borde elevado 1,2 mm</span></li><li>Protección<span>Anticaídas</span></li></ul>'+
-      '<a class="cta" href="#reserva" data-color="'+p.name+'">Quiero la '+p.name.toLowerCase()+' →</a>';
+      '<a class="cta" href="#reserva" data-color="'+p.name+'">'+p.cta+' →</a>';
     d.appendChild(info);wrap.appendChild(d);
     var track=d.querySelector(".car-track"),th=d.querySelectorAll(".car-thumbs button"),cnt=d.querySelector(".car-count"),pv=d.querySelector(".prev"),nx=d.querySelector(".next");
     function idx(){return Math.round(track.scrollLeft/track.clientWidth)}
