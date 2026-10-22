@@ -291,7 +291,7 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
 
     <!-- Pega aquí tu endpoint (Formspree, Brevo, Netlify Forms…). Ej.: https://formspree.io/f/xxxxxx -->
     <!-- GitHub Pages: pega tu enlace de Formspree en action (https://formspree.io/f/XXXX) -->
-    <form id="form" name="atelier" actionhttps://formspree.io/f/maeqrzkp method="POST" novalidate>
+    <form id="form" name="atelier" action="" method="POST" novalidate>
       <p hidden><label>No rellenar <input name="bot-field"></label></p>
       <div class="fields" style="display:flex;flex-direction:column;gap:16px">
         <input type="hidden" name="color" id="color" value="">
@@ -412,6 +412,7 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
   document.addEventListener("click",function(e){
     var a=e.target.closest(".cta");if(a&&a.tagName==="A"){var sct=a.closest("section,header");gtag("event","cta_click",{cta_text:a.textContent.trim(),cta_location:sct?(sct.id||sct.className||"header"):"page"});}
     var t=e.target.closest(".pp-tab");if(t)gtag("event","select_color",{color:t.textContent.trim()});
+    var st=e.target.closest('a[href*="/tiendas"]');if(st)gtag("event","store_finder_click",{collection:"atelier"});
   });
 
   /* --- Cookies + Clarity --- */
