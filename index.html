@@ -20,7 +20,8 @@ body{margin:0;background:var(--white);color:var(--ink);font:16px/1.6 var(--sans)
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
-h1 em,h2 em{font-style:italic}
+h1 em,h2 em,.h1 em{font-style:italic}
+.h1{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0}
 h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.01em}
 h2{font-size:clamp(2rem,4vw,3rem)}
@@ -40,20 +41,22 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .nav{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{display:flex;align-items:center;gap:14px;text-decoration:none}
 .logo img{height:30px;width:auto}
-.logo span{font-family:var(--serif);font-size:1.3rem;font-style:italic;border-left:1px solid var(--line);padding-left:14px}
-.nav .cta{padding:10px 20px;font-size:.88rem}
+.logo span{display:none;font-family:var(--serif);font-size:1.3rem;font-style:italic;border-left:1px solid var(--line);padding-left:14px}
+.nav .cta{padding:9px 16px;font-size:.8rem}
 
 /* Hero */
 .hero{padding:0;background:var(--cream)}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);max-height:860px}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;gap:24px;padding:48px clamp(20px,5vw,72px)}
-.hero-img{background:var(--img-hero) center 30%/cover no-repeat #d9cfc2}
-.scarcity{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted)}
+.hero-banner{margin:0;line-height:0;background:#0d0b09}
+.hero-banner img{width:100%;height:auto;display:block}
+.hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;padding:32px 20px 44px;max-width:760px;margin:0 auto}
+.hero-copy .lead{margin:0 auto}
+.scarcity{display:block;font-size:.9rem;color:var(--muted);max-width:34ch}
+.scarcity i{display:inline-block;vertical-align:1px;margin-right:8px}
 .scarcity i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(156,122,74,.18)}
 
 /* Beneficios */
 .center{text-align:center}.center .lead{margin:16px auto 0}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.benefits{display:grid;grid-template-columns:1fr;gap:8px;margin-top:36px}
 .benefit{border-top:1px solid var(--ink);padding-top:24px}
 .benefit .n{font-family:var(--serif);font-size:1rem;color:var(--gold);font-style:italic}
 .benefit h3{margin:8px 0 10px}
@@ -61,11 +64,12 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 
 /* Proceso */
 .process{background:var(--cream)}
-.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.process-grid{display:grid;grid-template-columns:1fr;gap:clamp(32px,6vw,80px);align-items:center}
 .process-img{aspect-ratio:4/5;background:var(--img-process) 42% center/cover no-repeat #d9cfc2}
 
 /* Colección */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;gap:14px;margin-top:36px}
+.gallery figure{scroll-snap-align:start}
 .gallery figure{margin:0}
 .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
 .gallery figcaption{margin-top:10px;font-size:.9rem}
@@ -80,7 +84,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 
 /* Confianza */
 .trust{padding:56px 0;border-bottom:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:center}
 .trust-grid div{padding:8px}
 .trust-grid svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.4;margin:0 auto 10px}
 .trust-grid b{display:block;font-size:.95rem}.trust-grid small{color:var(--muted)}
@@ -88,7 +92,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 
 /* Formulario */
 .form-sec{background:var(--ink);color:#fff}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.form-grid{display:grid;grid-template-columns:1fr;gap:clamp(32px,6vw,80px);align-items:center}
 .form-sec .lead{color:#C9C2B8}
 .perks{list-style:none;padding:0;margin:28px 0 0}
 .perks li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid #2c2c2c}
@@ -115,6 +119,8 @@ details p{color:var(--muted);margin:12px 0 0}
 
 /* Cierre */
 .final{background:var(--cream);text-align:center}
+.band{margin:0;line-height:0;background:#5a1f22}
+.band img{width:100%;height:auto;display:block}
 .final h2{max-width:18ch;margin:0 auto 28px}
 
 footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
@@ -129,13 +135,13 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 .pp-tab i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
 .pp-tab[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .pp-media{min-width:0}
-.pp-panel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:40px}
+.pp-panel{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,64px);align-items:center;margin-top:40px}
 .pp-panel[hidden]{display:none}
 .car{position:relative}
 .car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;border-radius:6px;background:#fff;scrollbar-width:none}
 .car-track::-webkit-scrollbar{display:none}
 .car-track img{flex:0 0 100%;width:100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:start}
-.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .car-btn.prev{left:12px}.car-btn.next{right:12px}
 .car-btn:disabled{opacity:.35;cursor:default}
 .car-thumbs{display:flex;gap:8px;margin-top:12px;overflow-x:auto}
@@ -148,22 +154,52 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 .specs{list-style:none;padding:0;margin:0 0 28px}
 .specs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
 .specs li span{color:var(--muted)}
-@media (max-width:860px){.pp-panel{grid-template-columns:1fr}.car-btn{width:38px;height:38px}}
 
-@media (max-width:860px){
-  .hero-grid,.process-grid,.form-grid{grid-template-columns:1fr}
-  .hero-grid{min-height:0;max-height:none}
-  .hero-img{aspect-ratio:4/5;order:2}
-  .hero-copy{padding:40px 20px}
-  .benefits{grid-template-columns:1fr;gap:8px;margin-top:36px}
-  .gallery{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
-  .gallery figure{scroll-snap-align:start}
-  .trust-grid{grid-template-columns:1fr 1fr}
-  .logo span{display:none}
-  .nav .cta{padding:9px 16px;font-size:.8rem}
+
+/* Cookies */
+.cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:520px;margin-left:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.18);font-size:.88rem}
+.cookies[hidden]{display:none}
+.cookies p{margin:0 0 12px;color:var(--muted)}
+.cookies .row{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{font:inherit;font-weight:600;border-radius:999px;padding:10px 18px;cursor:pointer;border:1px solid var(--ink);background:#fff;color:var(--ink)}
+.cookies button.accept{background:var(--ink);color:#fff}
+
+/* ====== Tablet y escritorio (mobile-first: lo de arriba es móvil) ====== */
+@media (min-width:600px){
+  .trust-grid{grid-template-columns:repeat(4,1fr)}
+  .benefits{grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+}
+@media (min-width:861px){
+  .logo span{display:inline}
+  .hero-banner img{height:min(58vh,500px);object-fit:cover;object-position:center 30%}
+  .nav .cta{padding:10px 20px;font-size:.88rem}
+  .hero-copy{padding:56px 20px 72px;gap:24px}
+  .process-grid,.form-grid{grid-template-columns:1fr 1fr}
+  .pp-panel{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+  .car-btn{width:44px;height:44px}
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);grid-auto-columns:auto;overflow:visible;margin-top:48px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-style='italic' fill='%23F6F1EA' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#141414">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atelier · The Woven Collection | La Casa de las Carcasas">
+<meta property="og:description" content="Tu nuevo it-piece se trenza a mano. Limited edition en granate, camel y negro. Únete a la waitlist.">
+<meta property="og:image" content="https://melissacerezo-svg.github.io/Atelier/og-atelier.jpg">
+<meta property="og:url" content="https://melissacerezo-svg.github.io/Atelier/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ====== MEDICIÓN: pega aquí tus IDs ======
+     GA4:     ID de medición, empieza por G-  (Analytics > Administrar > Flujos de datos)
+     CLARITY: ID del proyecto (clarity.microsoft.com > Settings > Overview)
+     Hasta que el visitante acepte las cookies, no se recoge nada. -->
+<script>
+window.ATELIER_IDS={GA4:"",CLARITY:""};
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied"});
+if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+ATELIER_IDS.GA4;document.head.appendChild(g);gtag("js",new Date());gtag("config",ATELIER_IDS.GA4);}
+</script>
 </head>
 <body>
 
@@ -180,15 +216,18 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 <main>
 <!-- 1 · HERO -->
 <section class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow">Atelier · The Capsule Collection</div>
-      <h1>Tu nuevo <em>it-piece</em> se trenza a mano.</h1>
-      <p class="lead">Móvil, portátil, tablet y bandolera, vestidos de trenzado en burdeos, camel, azul noche y negro. <em>Limited edition</em>: pocas piezas, para pocas manos. Entra en la <em>waitlist</em> y elige la tuya antes que nadie.</p>
+  <h1 class="hero-banner">
+    <picture>
+      <source media="(max-width:599px)" srcset="./atelier-hero-movil.jpg" width="1000" height="625">
+      <img src="./atelier-hero.jpg" width="2000" height="837" alt="Atelier · The Woven Collection. Dos modelos con las fundas trenzadas Atelier" fetchpriority="high">
+    </picture>
+  </h1>
+  <div class="hero-copy">
+      <div class="eyebrow">Crafted by hand · Limited edition</div>
+      <p class="h1">Tu nuevo <em>it-piece</em> se trenza a mano.</p>
+      <p class="lead">Móvil, portátil, tablet y bolso, vestidos de trenzado en granate, camel y negro. <em>Limited edition</em>: pocas piezas, para pocas manos. Entra en la <em>waitlist</em> y elige la tuya antes que nadie.</p>
       <div><a class="cta" href="#reserva">Unirme a la waitlist →</a></div>
-      <div class="scarcity"><i></i><em>Limited drop</em> · quien está en la waitlist elige primero</div>
-    </div>
-    <div class="hero-img" role="img" aria-label="Modelo abrazando la funda de portátil camel, la de tablet burdeos y la de móvil camel de Atelier"></div>
+      <div class="scarcity"><i></i><span><em>Limited drop</em> · quien está en la waitlist elige primero</span></div>
   </div>
 </section>
 
@@ -229,11 +268,11 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
     <h2 style="margin-top:12px">Cuatro <em>must-haves</em> para todo lo que llevas contigo</h2>
     <div class="gallery" style="text-align:left">
       <figure><img src="./negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><b>Funda de portátil</b><span>From office to coffee</span></figcaption></figure>
-      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet burdeos trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>A juego con todo el set</span></figcaption></figure>
+      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet granate trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>A juego con todo el set</span></figcaption></figure>
       <figure><img src="./hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><b>Funda de móvil</b><span>Tu <em>everyday essential</em></span></figcaption></figure>
-      <figure><img src="./bandolera-movimiento.jpg" alt="Bandolera porta-móvil Atelier burdeos con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bandolera porta-móvil</b><span>Hands-free, estilo intacto</span></figcaption></figure>
+      <figure><img src="./bandolera-movimiento.jpg" alt="Bolso porta-móvil Atelier granate con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bolso porta-móvil</b><span>Hands-free, estilo intacto</span></figcaption></figure>
     </div>
-    <div class="swatches"><span><i style="background:#5a1f22"></i>Burdeos</span><span><i style="background:#a06a3e"></i>Camel</span><span><i style="background:#232b45"></i>Azul noche</span><span><i style="background:#141414"></i>Negro</span></div>
+    <div class="swatches"><span><i style="background:#5a1f22"></i>Granate</span><span><i style="background:#a06a3e"></i>Camel</span><span><i style="background:#141414"></i>Negro</span></div>
   </div>
 </section>
 
@@ -275,7 +314,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 
     <!-- Pega aquí tu endpoint (Formspree, Brevo, Netlify Forms…). Ej.: https://formspree.io/f/xxxxxx -->
     <!-- GitHub Pages: pega tu enlace de Formspree en action (https://formspree.io/f/XXXX) -->
-    <form id="form" name="atelier" action="https://formspree.io/f/maeqrzkp" method="POST" novalidate>
+    <form id="form" name="atelier" action="" method="POST" novalidate>
       <p hidden><label>No rellenar <input name="bot-field"></label></p>
       <div class="fields" style="display:flex;flex-direction:column;gap:16px">
         <input type="hidden" name="color" id="color" value="">
@@ -314,6 +353,9 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
   </div>
 </section>
 
+<!-- 6b · BANDA DE MARCA -->
+<figure class="band"><img src="./atelier-banner.jpg" width="2000" height="743" alt="Atelier · The Woven Collection" loading="lazy"></figure>
+
 <!-- 7 · CTA FINAL -->
 <section class="final">
   <div class="wrap">
@@ -327,7 +369,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 <footer>
   <div class="wrap foot">
     <span>© CARCAMOVIL, S.L. · La Casa de las Carcasas</span>
-    <span><a href="https://registro.lacasadelascarcasas.es/privacidad/">Privacidad</a><a href="https://lacasadelascarcasas.es/">Aviso legal</a><a href="https://www.instagram.com/lacasadelascarcasas/">Instagram</a><a href="https://www.tiktok.com/@lacasadelascarcasas">TikTok</a></span>
+    <span><a href="https://registro.lacasadelascarcasas.es/privacidad/">Privacidad</a><a href="https://lacasadelascarcasas.es/" title="Sustituir por la URL del aviso legal">Aviso legal</a><a href="https://www.instagram.com/lacasadelascarcasas/">Instagram</a><a href="https://www.tiktok.com/@lacasadelascarcasas">TikTok</a></span>
   </div>
 </footer>
 
@@ -338,7 +380,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
     e.preventDefault();
     if(!f.checkValidity()){f.reportValidity();return;}
     var btn=f.querySelector("button");btn.disabled=true;btn.textContent="Enviando…";
-    var done=function(){f.classList.add("sent");if(window.gtag)gtag("event","generate_lead",{form:"atelier"});};
+    var done=function(){f.classList.add("sent");if(window.gtag)gtag("event","generate_lead",{form:"atelier",color:(document.getElementById("color")||{}).value||"sin elegir",modelo:document.getElementById("modelo").value});};
     var url=f.getAttribute("action");
     if(!url){done();return;}
     fetch(url,{method:"POST",body:new FormData(f),headers:{Accept:"application/json"}})
@@ -350,9 +392,8 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 <script>
 (function(){
   var P=[
-    {id:"burdeos",name:"Burdeos",hex:"#5a1f22",desc:"Intenso y sofisticado, como un buen vino. El tono más magnético de la colección.",imgs:[2,3,4,1,5]},
+    {id:"burdeos",name:"Granate",hex:"#5a1f22",desc:"Intenso y sofisticado, como un buen vino. El tono más magnético de la colección.",imgs:[2,3,4,1,5]},
     {id:"camel",name:"Camel",hex:"#a06a3e",desc:"Cálido, atemporal, imprescindible. El neutro que eleva cualquier <em>outfit</em>.",imgs:[2,3,4,1,5]},
-    {id:"azul",name:"Azul noche",hex:"#232b45",desc:"Profundo y misterioso, con marco negro. <em>Quiet luxury</em> para quien prefiere susurrar su estilo.",imgs:[2,1]},
     {id:"negro",name:"Negro",hex:"#141414",desc:"Negro total. Minimalista, rotunda, eterna.",imgs:[2,1,3]}
   ];
   var tabs=document.querySelector(".pp-tabs"),wrap=document.getElementById("pp-panels");
@@ -382,6 +423,30 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
   tabs.addEventListener("click",function(e){var b=e.target.closest(".pp-tab");if(!b)return;
     tabs.querySelectorAll(".pp-tab").forEach(function(x){var on=x===b;x.setAttribute("aria-selected",on);document.getElementById(x.getAttribute("aria-controls")).hidden=!on});});
   document.addEventListener("click",function(e){var a=e.target.closest("[data-color]");if(a)document.getElementById("color").value=a.dataset.color;});
+})();
+</script>
+<div class="cookies" id="cookies" hidden role="dialog" aria-label="Cookies">
+  <p>Usamos cookies de analítica (Google Analytics y Microsoft Clarity) para saber cómo se usa esta página y mejorarla. Solo se activan si las aceptas. <a href="https://registro.lacasadelascarcasas.es/privacidad/" target="_blank" rel="noopener">Más info</a></p>
+  <div class="row"><button class="accept" type="button" data-c="yes">Aceptar</button><button type="button" data-c="no">Rechazar</button></div>
+</div>
+<script>
+(function(){
+  /* --- Eventos de interacción --- */
+  document.addEventListener("click",function(e){
+    var a=e.target.closest(".cta");if(a&&a.tagName==="A"){var sct=a.closest("section,header");gtag("event","cta_click",{cta_text:a.textContent.trim(),cta_location:sct?(sct.id||sct.className||"header"):"page"});}
+    var t=e.target.closest(".pp-tab");if(t)gtag("event","select_color",{color:t.textContent.trim()});
+  });
+
+  /* --- Cookies + Clarity --- */
+  var ids=window.ATELIER_IDS||{},box=document.getElementById("cookies"),KEY="atelier-consent";
+  function grant(){
+    gtag("consent","update",{analytics_storage:"granted"});
+    if(ids.CLARITY&&!window.clarity){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",ids.CLARITY);}
+  }
+  if(!ids.GA4&&!ids.CLARITY)return;
+  var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}
+  if(saved==="yes")grant(); else if(saved!=="no")box.hidden=false;
+  box.addEventListener("click",function(e){var b=e.target.closest("[data-c]");if(!b)return;try{localStorage.setItem(KEY,b.dataset.c);}catch(err){}if(b.dataset.c==="yes")grant();box.hidden=true;});
 })();
 </script>
 </body>
