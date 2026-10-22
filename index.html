@@ -155,7 +155,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 .car-thumbs img{width:100%;height:100%;object-fit:cover;border-radius:2px}
 .car-count{position:absolute;left:12px;bottom:12px;background:rgba(20,20,20,.72);color:#fff;font-size:.75rem;padding:3px 10px;border-radius:999px}
 .pp-info h3{font-size:clamp(2rem,4vw,2.8rem);margin:8px 0 12px}
-.pp-info p{color:var(--muted);margin:0 0 20px}
+.pp-info .price{font-family:var(--serif);font-size:1.6rem;color:var(--ink);margin:-4px 0 12px}
 .specs{list-style:none;padding:0;margin:0 0 28px}
 .specs li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
 .specs li span{color:var(--muted)}
@@ -384,7 +384,7 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
       '<div class="car-thumbs">'+src.map(function(s,i){return '<button type="button" aria-label="Ver foto '+(i+1)+'"><img src="'+s+'" alt="" loading="lazy"></button>'}).join("")+'</div></div>';
     var info=document.createElement("div");info.className="pp-info";
     info.innerHTML='<div class="eyebrow">Phone case · Limited edition</div><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+
-      '<ul class="specs"><li>Trenzado<span>A mano</span></li><li>Cámara<span>Borde elevado 0,5 mm</span></li><li>Pantalla<span>Borde elevado 1,2 mm</span></li><li>Protección<span>Anticaídas</span></li></ul>'+
+      '<ul class="specs"><li>Trenzado<span>A mano</span></li><li>Cámara<span>Borde elevado 0,5 mm</span></li><li>Pantalla<span>Borde elevado 1,2 mm</span></li><li>Protección<span>Anticaídas</span></li></ul>'+   <h3>'+p.name+'</h3><p class="price">29,99 €</p><p>
       '<a class="cta" href="#reserva" data-color="'+p.name+'">'+p.cta+' →</a>';
     d.appendChild(info);wrap.appendChild(d);
     var track=d.querySelector(".car-track"),th=d.querySelectorAll(".car-thumbs button"),cnt=d.querySelector(".car-count"),pv=d.querySelector(".prev"),nx=d.querySelector(".next");
