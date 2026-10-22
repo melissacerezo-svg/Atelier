@@ -72,7 +72,12 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdro
 .gallery figure{scroll-snap-align:start}
 .gallery figure{margin:0}
 .gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
-.gallery figcaption{margin-top:10px;font-size:.9rem}
+.intro{max-width:56ch;color:var(--muted);font-size:1rem;line-height:1.65}
+.intro p{margin:0 0 12px}
+.intro strong{color:var(--ink);letter-spacing:.08em;font-weight:600}
+.intro-hook{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--ink)}
+.intro-sign{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:0!important}
+.gallery figcaption{margin-top:10px;font-size:.95rem;color:var(--muted)}
 .gallery figcaption b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:500}
 .gallery figcaption span{color:var(--muted)}
 .swatches{display:flex;justify-content:center;gap:22px;margin-top:40px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
@@ -185,7 +190,7 @@ footer{padding:40px 0;font-size:.8rem;color:var(--muted)}
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Atelier · The Woven Collection | La Casa de las Carcasas">
-<meta property="og:description" content="Tu nuevo it-piece se trenza a mano. Limited edition en granate, camel y negro. Únete a la waitlist.">
+<meta property="og:description" content="El arte de elevar lo cotidiano. Colección hecha a mano en granate, camel y negro. Únete a la waitlist.">
 <meta property="og:image" content="https://melissacerezo-svg.github.io/Atelier/og-atelier.jpg">
 <meta property="og:url" content="https://melissacerezo-svg.github.io/Atelier/">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,8 +228,13 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
     </picture>
   </h1>
   <div class="hero-copy">
-      <p class="h1">Tu nuevo <em>it-piece</em> se trenza a mano.</p>
-      <p class="lead">Móvil, portátil, tablet y bolso trenzados a mano en granate, camel y negro. <em>Limited edition</em>.</p>
+      <p class="h1">El arte de elevar lo cotidiano.</p>
+      <div class="intro">
+        <p class="intro-hook">Hay detalles que lo cambian todo.</p>
+        <p><strong>ATELIER</strong> nace de la idea de transformar lo cotidiano en algo extraordinario. Una colección hecha a mano, donde la moda, la funcionalidad y el diseño se unen para dar vida a piezas únicas, cuidadas hasta el último detalle.</p>
+        <p>Porque tu móvil, tu iPad o tu portátil también forman parte de tu estilo. Y porque incluso el look más sencillo puede convertirse en algo especial con el accesorio adecuado.</p>
+        <p class="intro-sign">Diseñada para acompañarte cada día. Creada para marcar la diferencia.</p>
+      </div>
       <div><a class="cta" href="#reserva">Unirme a la waitlist →</a></div>
       <div class="scarcity"><i></i><span><em>Limited drop</em> · quien está en la waitlist elige primero</span></div>
   </div>
@@ -236,12 +246,11 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
     <div class="eyebrow">The Collection</div>
     <h2 style="margin-top:12px">Cuatro <em>must-haves</em> para todo lo que llevas contigo</h2>
     <div class="gallery" style="text-align:left">
-      <figure><img src="./negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><b>Funda de portátil</b><span>From office to coffee</span></figcaption></figure>
-      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet granate trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><b>Funda de tablet</b><span>A juego con todo el set</span></figcaption></figure>
-      <figure><img src="./hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><b>Funda de móvil</b><span>Tu <em>everyday essential</em></span></figcaption></figure>
-      <figure><img src="./bandolera-movimiento.jpg" alt="Bolso porta-móvil Atelier granate con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><b>Bolso porta-móvil</b><span>Hands-free, estilo intacto</span></figcaption></figure>
+      <figure><img src="./negro-detalle.jpg" alt="Funda de portátil Atelier trenzada en negro con broches dorados" loading="lazy"><figcaption><span>From office to coffee</span></figcaption></figure>
+      <figure><img src="./burdeos-detalle.jpg" alt="Funda de tablet granate trenzada sobre la funda de portátil" loading="lazy" style="object-position:center 75%"><figcaption><span>A juego con todo el set</span></figcaption></figure>
+      <figure><img src="./hero-camel-burdeos.jpg" alt="Funda de móvil Atelier trenzada en camel" loading="lazy" style="object-position:70% 70%"><figcaption><span>Tu <em>everyday essential</em></span></figcaption></figure>
+      <figure><img src="./bandolera-movimiento.jpg" alt="Bolso porta-móvil Atelier granate con broche de flor azul" loading="lazy" style="object-position:center 60%"><figcaption><span>Hands-free, estilo intacto</span></figcaption></figure>
     </div>
-    <div class="swatches"><span><i style="background:#5a1f22"></i>Granate</span><span><i style="background:#a06a3e"></i>Camel</span><span><i style="background:#141414"></i>Negro</span></div>
   </div>
 </section>
 
@@ -321,21 +330,6 @@ if(ATELIER_IDS.GA4){var g=document.createElement("script");g.async=true;g.src="h
     </div>
   </div>
 </section>
-
-<!-- 2 · BENEFICIOS -->
-<section>
-  <div class="wrap center">
-    <div class="eyebrow">The Atelier Touch</div>
-    <h2 style="margin-top:12px">Detalles que se notan. Y se lucen.</h2>
-    <div class="benefits" style="text-align:left">
-      <div class="benefit"><div class="n">i.</div><h3>Crafted by hand</h3><p>Cada tira, entrelazada a mano. No hay dos piezas exactamente iguales, y la tuya tampoco lo será.</p></div>
-      <div class="benefit"><div class="n">ii.</div><h3>Limited edition</h3><p>Una tirada corta, pensada para no repetirse. Cuando se agote, solo quedará en las fotos.</p></div>
-      <div class="benefit"><div class="n">iii.</div><h3>The perfect set</h3><p>Móvil, portátil y tablet en el mismo trenzado, coronados con broches joya. Combínalos como tus accesorios: <em>effortless chic</em>.</p></div>
-    </div>
-  </div>
-</section>
-
-
 
 <!-- 6b · BANDA DE MARCA -->
 <figure class="band"><img src="./atelier-banner.jpg" width="2000" height="743" alt="Atelier · The Woven Collection" loading="lazy"></figure>
